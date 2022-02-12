@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f7f0e9;
+    transition: .6s;
+}
+
+h1{
+    text-align: center;
+    font-size: 5rem;
+    color: #3d3935;
+    transition: .4s ease-in-out;
+}
+
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    transition: .4s;
+}
+.switch input{
+    display: none;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0b0a14;
+    border-radius: 34px;
+    transition: .4s;
+}
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background: #ffffff;
+}
+input:checked + .slider::before {
+    background: #0b0a14;
+    transform:translateX(26px); 
+}
+
+.dark-mode{
+    background: #0b0a14;
+}
+.dark-mode h1{
+    color: #f7f0e9;
+}
+
+@media only screen and (max-width: 828px){
+    h1{
+        font-size: 1.8rem;
+        font-weight: normal;
+    }
+    .switch{
+        width: 45px;
+        height: 24px;
+    }    
+    .slider::before {
+        width: 17px;
+        height: 17px;
+    }
+    input:checked + .slider::before {
+        transform:translateX(22px); 
+    }
+}
